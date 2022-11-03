@@ -1,4 +1,4 @@
-# InformationSecurity-Cryptography
+# C-Cryptography-Collection
 
     常見加密演算法運用 C 語言做整合（小部分個人修改，加強）
     Common encryption algorithms are integrated by using C language 
