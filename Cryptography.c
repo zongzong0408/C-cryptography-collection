@@ -1,9 +1,24 @@
+/*
+	coding as utf-8
+*/ 
+/*
+
+    Author  : zong zong
+    Connect : zongozngchu0408@gmail.com
+    School  : è‡ºåŒ—å¸‚ç«‹ä¸­æ­£é«˜ç´šä¸­å­¸
+    GitHub  : https://github.com/zongzong0408/C-snake_game
+    
+	Last edited : 2022/10/15/06:00PM
+    
+*/
+
+
 #include <stdio.h>			//Compiler version gcc  6.3.0
 #include <stdlib.h>			//using ASCII standard code
 #include <math.h>			// 
-#include <string.h>			//			³Ğ§@ªÌ : ¥_¥«¤¤¥¿°ª¤¤ ¦¶®e¼x 
-#include <ctype.h>			//			¥¼¸g¦P·N¤ÅÀH·N­×§ï¨Ã¤½¶}µo¥¬ 
-#include <time.h>			//			³Ğ§@¤£©ö¡A·PÁÂ±zªº°t¦X QAQ 
+#include <string.h>			//			
+#include <ctype.h>			//			
+#include <time.h>			//			
 
 #define MAX_STRING 50000	//Max string lenght is 500 char
 #define MAX_SHIFT 10		//Max range lenght is 500 char
@@ -26,25 +41,25 @@
 //Encrypt functions
 //=================
 void Encryption(void);				
-//¥j¨å¥[±K 
-void Classical_Cryptography(void);	//Classical Cryptography	¥j¨å±K½X¾Ç 
-void CaesarCipher(void);			//Caesar Cipher							³ÍÂÄ±K½X 
-void Advanced_CaesarCipher(void);	//Advanced Caesar Cipher				¶i¶¥ ³ÍÂÄ±K½X 
-void MirrorCipher(void);			//Mirror Cipher							Ãè¹³Â½Âà 
-void PolybiusCipher(void);			//Polybius Checkerboard Cipher 			ªi§Q¤ñ¶ø´µ´Ñ½L
+//å¤å…¸åŠ å¯† 
+void Classical_Cryptography(void);	//Classical Cryptography	å¤å…¸å¯†ç¢¼å­¸ 
+void CaesarCipher(void);			//Caesar Cipher							å‡±è–©å¯†ç¢¼ 
+void Advanced_CaesarCipher(void);	//Advanced Caesar Cipher				é€²éš å‡±è–©å¯†ç¢¼ 
+void MirrorCipher(void);			//Mirror Cipher							é¡åƒç¿»è½‰ 
+void PolybiusCipher(void);			//Polybius Checkerboard Cipher 			æ³¢åˆ©æ¯”å¥§æ–¯æ£‹ç›¤
 
-//²{¥N¥[±K 
-void Modern_Cryptography(void);		//Modern Cryptography 		²{¥N±K½X¾Ç 
-void MorseCipher(void);				//Morse Cipher							¼¯´µ±K½X 
+//ç¾ä»£åŠ å¯† 
+void Modern_Cryptography(void);		//Modern Cryptography 		ç¾ä»£å¯†ç¢¼å­¸ 
+void MorseCipher(void);				//Morse Cipher							æ‘©æ–¯å¯†ç¢¼ 
 int Base64(void);					//Base-64								Base64		
-int RSA(void);						//RSA									RSA ¥[±Kºtºâªk  
-int DH(void);						//Diffie-Hellman key exchage			¨fµá»®º¸°Ò¤½Æ_¥[±K(±KÆ_¥æ´«)(¿é¤J¨â¤è¨pÆ_¨D¥[±K¤½Æ_)
-int Advanced_DH(void);				//Advanced Diffie-Hellman Key Exchage	¨fµá»®º¸°Ò¤½Æ_¥[±K(±KÆ_¥æ´«)(¿é¤J©ú¤å©M¨â¤è¨pÆ_¨D¥[±K¦r¦ê)
-int DES(void);						//Data Encryption Standard 				¸ê®Æ¥[±K¼Ğ·Ç  
+int RSA(void);						//RSA									RSA åŠ å¯†æ¼”ç®—æ³•  
+int DH(void);						//Diffie-Hellman key exchage			ç‹„è²èµ«çˆ¾æ›¼å…¬é‘°åŠ å¯†(å¯†é‘°äº¤æ›)(è¼¸å…¥å…©æ–¹ç§é‘°æ±‚åŠ å¯†å…¬é‘°)
+int Advanced_DH(void);				//Advanced Diffie-Hellman Key Exchage	ç‹„è²èµ«çˆ¾æ›¼å…¬é‘°åŠ å¯†(å¯†é‘°äº¤æ›)(è¼¸å…¥æ˜æ–‡å’Œå…©æ–¹ç§é‘°æ±‚åŠ å¯†å­—ä¸²)
+int DES(void);						//Data Encryption Standard 				è³‡æ–™åŠ å¯†æ¨™æº–  
 int Triple_DES(void);				//
-int AES(void);						//Advanced Encryption Standard 			¶i¶¥¥[±K¼Ğ·Ç  
+int AES(void);						//Advanced Encryption Standard 			é€²éšåŠ å¯†æ¨™æº–  
 int MD5(void);						//
-int SHA_1(void);					//Secure Hash Algorithm 1 				¦w¥şÂø´êºtºâªk - 1 - 
+int SHA_1(void);					//Secure Hash Algorithm 1 				å®‰å…¨é›œæ¹Šæ¼”ç®—æ³• - 1 - 
 
 
 //=================
@@ -56,28 +71,28 @@ void Key(void);						//not yet
 
 
 //========================
-//Area of global  variable			//ª½Ä±´N¥Î¥ş°ìÅÜ¼Æ¸Ñ¨M¤F¡C¦³©ú½T·N¸q¡A¤£·|³y¦¨ÅÜ¼Æ¦¾¬V¡C 
+//Area of global  variable			//ç›´è¦ºå°±ç”¨å…¨åŸŸè®Šæ•¸è§£æ±ºäº†ã€‚æœ‰æ˜ç¢ºæ„ç¾©ï¼Œä¸æœƒé€ æˆè®Šæ•¸æ±™æŸ“ã€‚ 
 //========================
-int *INTptr[2] = {NULL};			//gobal *int[]  --> ¼È¦s«ü¼Ğ 										(Temporary pointers)
+int *INTptr[2] = {NULL};			//gobal *int[]  --> æš«å­˜æŒ‡æ¨™ 										(Temporary pointers)
 //char CHARStr[MAX_STRING] = {0};	//
 //char *CHARptr = &CHARStr[0];		//
 char *CHARptr = NULL;				// 
-char InputStr[MAX_STRING];			//gobal char[] 	--> ­n¥[±Kªº¦r¦ê 									Encrypt : array of encrypted string
-int inputStr[MAX_STRING];			//gobal char[] 	--> ­n¥[±Kªº¦r¦ê¾ã¼Æ°}¦C 							Encrypt : Integer array of encrypted string
-int Len;							//gobal int 	--> ­n¥[±Kªº¦r¦êªºªø«× 								Encrypt : Length of encrypted string
+char InputStr[MAX_STRING];			//gobal char[] 	--> è¦åŠ å¯†çš„å­—ä¸² 									Encrypt : array of encrypted string
+int inputStr[MAX_STRING];			//gobal char[] 	--> è¦åŠ å¯†çš„å­—ä¸²æ•´æ•¸é™£åˆ— 							Encrypt : Integer array of encrypted string
+int Len;							//gobal int 	--> è¦åŠ å¯†çš„å­—ä¸²çš„é•·åº¦ 								Encrypt : Length of encrypted string
 
-char Mod[MAX_STRING];				//gobal char	--> °£ªkªº¾l¼Æ 										
+char Mod[MAX_STRING];				//gobal char	--> é™¤æ³•çš„é¤˜æ•¸ 										
 
-char MuRange[MAX_SHIFT];			//gobal char[] 	-->	(¶i¶¥³ÍÂÄ±K½X)¦ì²¾ªº¦r¦ê 						Advanced-DH : array of shitf range
-int IMuRange[MAX_SHIFT];			//gobal int[] 	-->	(¶i¶¥³ÍÂÄ±K½X)¦ì²¾ªº¾ã¼Æ°}¦C 					Advanced-DH : integer array of shift range
-char MuPoly[MAX_STRING];			//gobal char[] 	--> (ªi§Q¤ñ¶ø´µ´Ñ½L)­n¥[±Kªº¦r¦êªº±KÆ_ 				Polybius : array of encrypted string	
-int IMuPoly[MAX_STRING];			//gobal int[]	--> (ªi§Q¤ñ¶ø´µ´Ñ½L)­n¥[±Kªº¦r¦êªº±KÆ_ªº¾ã¼Æ°}¦C 	Polybius : integer array of encrypted string
-unsigned LenOfRSA;					//gobal unsigned[] --> (RSA)¥­¤èªº¦r¦êªºªø«×						RSA : Length of pow string
-
-
+char MuRange[MAX_SHIFT];			//gobal char[] 	-->	(é€²éšå‡±è–©å¯†ç¢¼)ä½ç§»çš„å­—ä¸² 						Advanced-DH : array of shitf range
+int IMuRange[MAX_SHIFT];			//gobal int[] 	-->	(é€²éšå‡±è–©å¯†ç¢¼)ä½ç§»çš„æ•´æ•¸é™£åˆ— 					Advanced-DH : integer array of shift range
+char MuPoly[MAX_STRING];			//gobal char[] 	--> (æ³¢åˆ©æ¯”å¥§æ–¯æ£‹ç›¤)è¦åŠ å¯†çš„å­—ä¸²çš„å¯†é‘° 				Polybius : array of encrypted string	
+int IMuPoly[MAX_STRING];			//gobal int[]	--> (æ³¢åˆ©æ¯”å¥§æ–¯æ£‹ç›¤)è¦åŠ å¯†çš„å­—ä¸²çš„å¯†é‘°çš„æ•´æ•¸é™£åˆ— 	Polybius : integer array of encrypted string
+unsigned LenOfRSA;					//gobal unsigned[] --> (RSA)å¹³æ–¹çš„å­—ä¸²çš„é•·åº¦						RSA : Length of pow string
 
 
-void StartRun(void);													//¨Ï¥ÎªÌ¥i¯à­n­«½Æ°õ¦æ¡A©Ò¥H«Å§i¤@­Ó·sªº¥D¨ç¦¡¨Ó©I¥s main()
+
+
+void StartRun(void);													//ä½¿ç”¨è€…å¯èƒ½è¦é‡è¤‡åŸ·è¡Œï¼Œæ‰€ä»¥å®£å‘Šä¸€å€‹æ–°çš„ä¸»å‡½å¼ä¾†å‘¼å« main()
 void Error(int Line, int Col)											//Function to tell user where the error is
 {
 	if(Line != 0 && Col != 0)
@@ -171,7 +186,7 @@ static inline char* Addition(int digit1, char num1[], int digit2, char num2[])		
 	int compare = Comparsion(digit1, num1, digit2, num2);
 	
 	if(compare == 1 || compare == 3)
-	{											//¥ı¥ş³¡°µ¥[´î 
+	{											//å…ˆå…¨éƒ¨åšåŠ æ¸› 
 		for(int i = 0; i < digit1; ++i) Sum[i] = num1[i] + num2[i];
 		for(int i = 0; i < digit1; ++i)
 		{
@@ -195,11 +210,11 @@ static inline char* Addition(int digit1, char num1[], int digit2, char num2[])		
 		}		
 	}
 	
-	//§ä¦^¶Ç¦r¦êªºÅã¥Üªø«× 
+	//æ‰¾å›å‚³å­—ä¸²çš„é¡¯ç¤ºé•·åº¦ 
 	for(int i = 0; ; ++i)
 	{
 		int count = 0;
-		for(int j = i; j < i + 100; ++j)					//­Y±q¸Ó¦r¤¸©¹«á10¦ì§¡¬° 0 ªº¸Ü«K½T©wªø«×¬°¸Ó¦r¤¸½s¸¹ 
+		for(int j = i; j < i + 100; ++j)					//è‹¥å¾è©²å­—å…ƒå¾€å¾Œ10ä½å‡ç‚º 0 çš„è©±ä¾¿ç¢ºå®šé•·åº¦ç‚ºè©²å­—å…ƒç·¨è™Ÿ 
 		{
 			if(Sum[j] == 0) ++count;
 		}
@@ -313,7 +328,7 @@ static inline char* Multiplication(int digit1, char num1[], int digit2, char num
 }
 static inline char* Division(int digit1, char num1[], int digit2, char num2[])			//Function to do bignum division arithmetic (/)
 {
-	char Quotient[MAX_STRING];						//°Ó¼Æ 
+	char Quotient[MAX_STRING];						//å•†æ•¸ 
 	memset(Quotient, 0, MAX_STRING);
 	char *ptr1 = &Quotient[0];
 	
@@ -363,7 +378,7 @@ static inline char* Division(int digit1, char num1[], int digit2, char num2[])		
 	}
 	else
 	{
-		char Product[MAX_STRING];					//¼È¦s­¼¼Æ line 214 
+		char Product[MAX_STRING];					//æš«å­˜ä¹˜æ•¸ line 214 
 		memset(Product, 0, MAX_STRING);
 		char *ptr2 = &Product[0];
 		int LenOfQuo = 0;	
@@ -390,7 +405,7 @@ static inline char* Division(int digit1, char num1[], int digit2, char num2[])		
 	}
 		
 }
-void InputString(int mode)							//Function to input string ¿é¤J¦r¦êªº¨ç¦¡
+void InputString(int mode)							//Function to input string è¼¸å…¥å­—ä¸²çš„å‡½å¼
 //(0 : Encrypt, 1 : Diffie-Hellman, 2 : Advanced Diffie-Hellman, 3 : Polybius, 4 : RSA, 5 : Encrypt, 6 : DES, 7 : AES)
 {
 	int Fix;			//the variable of need correct seletion or not
@@ -402,10 +417,10 @@ void InputString(int mode)							//Function to input string ¿é¤J¦r¦êªº¨ç¦¡
 			printf("\033[32m(The max lenght of encrypted string is 500(int))\033[m\n");
 			printf("\033[32mPls enter the encrypted string: \033[m");
 			
-			setbuf(stdin, NULL);					//²MªÅ¿é¤J°Ï¦s½w 
+			setbuf(stdin, NULL);					//æ¸…ç©ºè¼¸å…¥å€å­˜ç·© 
 //			for(int i = 0; i < MAX_STRING; ++i)
 //			{
-//				InputStr[i] = 0;					//²MªÅ InputStr[] 
+//				InputStr[i] = 0;					//æ¸…ç©º InputStr[] 
 //			}
 			memset(InputStr, 0, MAX_STRING);
 			
@@ -483,7 +498,7 @@ void InputString(int mode)							//Function to input string ¿é¤J¦r¦êªº¨ç¦¡
 				printf("\033[32m(The max lenght of encrypted string is 500(int) and except letters (ASCII: A ~ z) all can not be added)\nThe String will all be translate to capital...\033[m\n");
 				printf("\033[32mPls enter the encrypted string: \033[m");
 				
-				setbuf(stdin, NULL);				//²MªÅ¿é¤J°Ï¦s½w 
+				setbuf(stdin, NULL);				//æ¸…ç©ºè¼¸å…¥å€å­˜ç·© 
 				memset(InputStr, 0, MAX_STRING);
 				
 				fgets(InputStr, MAX_STRING, stdin);
@@ -600,7 +615,7 @@ void InputString(int mode)							//Function to input string ¿é¤J¦r¦êªº¨ç¦¡
 	}
 	
 }
-int ModeChoice(int limit)							//Function to input selection mode(number of patterns) ¿é¤J¿ï¾Ü¼Ò¦¡ªº¨ç¼Æ 
+int ModeChoice(int limit)							//Function to input selection mode(number of patterns) è¼¸å…¥é¸æ“‡æ¨¡å¼çš„å‡½æ•¸ 
 {
 	int Mode;			//the variable of mode choose
 	int Fix;			//the variable of need correct seletion or not
@@ -634,7 +649,7 @@ int ModeChoice(int limit)							//Function to input selection mode(number of pat
 	return Mode; 
 	
 }
-int Shift(int limit)								//Function to input displacement ¿é¤J¦ì²¾¶qªº¨ç¦¡ 
+int Shift(int limit)								//Function to input displacement è¼¸å…¥ä½ç§»é‡çš„å‡½å¼ 
 //(1 : CaesarCipher, 2 : Advanced_CaesarCipher, 3 : PolybiusCipher, 4 : Diffie-Hellman key exchage)
 {
 	int Range;			//the variable of shift range 
@@ -690,7 +705,7 @@ int Shift(int limit)								//Function to input displacement ¿é¤J¦ì²¾¶qªº¨ç¦¡
 		{ 			
 			do
 			{
-				memset(MuPoly, 0, MAX_STRING);		//­Y¤Ó¤j¥Î¤£¨ì¥i§ï MAX_GOBAL
+				memset(MuPoly, 0, MAX_STRING);		//è‹¥å¤ªå¤§ç”¨ä¸åˆ°å¯æ”¹ MAX_GOBAL
 				memset(IMuPoly, 0, MAX_STRING);
 				setbuf(stdin, NULL);
 				
@@ -736,8 +751,8 @@ int Shift(int limit)								//Function to input displacement ¿é¤J¦ì²¾¶qªº¨ç¦¡
 	}
 	else if(limit == 4)								//4 : Diffie-Hellman key exchage
 	{ 
-		int Clock;		//the variable of modulo arithmetic	¨D¾l 
-		int Base;		//the variable of cardinal number	°ò¼Æ
+		int Clock;		//the variable of modulo arithmetic	æ±‚é¤˜ 
+		int Base;		//the variable of cardinal number	åŸºæ•¸
 		do
 		{ 
 			do
@@ -802,36 +817,36 @@ void Continue(void)
 
 
 //==============================
-//***Command Start*** ¥D¨ç¦¡¶}©l
+//***Command Start*** ä¸»å‡½å¼é–‹å§‹
 //==============================
 int main()
 {	
-	//initialization ªì©lÀô¹Ò 
-	system("color A");			//ÃC¦âªì©l¤Æ terminal color ¬° green(A) 
-	srand(time(NULL));			//¶Ã¼ÆºØ¤l¬° computer time
+	//initialization åˆå§‹ç’°å¢ƒ 
+	system("color A");			//é¡è‰²åˆå§‹åŒ– terminal color ç‚º green(A) 
+	srand(time(NULL));			//äº‚æ•¸ç¨®å­ç‚º computer time
 	
-	StartRun();					//°Ñ line:68 
+	StartRun();					//åƒ line:68 
 	
 	return 0;					//the only situation to END the program
 }
 void StartRun(void)
 {
-	//½sÄ¶ & °õ¦æ¶}©l compile & run...
+	//ç·¨è­¯ & åŸ·è¡Œé–‹å§‹ compile & run...
 	printf("\033[33m		* * *Program Is Starting* * *\033[m\n\n");
 	printf("\033[33m		***compiler version gcc  6.3.0***\033[m\n\n");
 	printf("\033[33m		***using ASCII standard code***\033[m\n\n");
 	
 //	for(int i = 0; i < MAX_STRING; ++i)
 //	{
-//		InputStr[i] = 0;			//²MªÅ InputStr[] 
+//		InputStr[i] = 0;			//æ¸…ç©º InputStr[] 
 //	} 	
-	memset(InputStr, 0, MAX_STRING);//³q¹L 0 ¾ã¼Æ­È¨Ó²M°£¦r¤¸°}¦C 
-	//¿ï¾Ü ¥[±K¼Ò¦¡ ©Î ¸Ñ±K¼Ò¦¡ 
+	memset(InputStr, 0, MAX_STRING);//é€šé 0 æ•´æ•¸å€¼ä¾†æ¸…é™¤å­—å…ƒé™£åˆ— 
+	//é¸æ“‡ åŠ å¯†æ¨¡å¼ æˆ– è§£å¯†æ¨¡å¼ 
 	printf("\033[32mWhich mode do you choose ? --> code(1) || decode(2)\033[m\n");
 	int Mode = ModeChoice(2);		//the variable of mode choose
 		
-	if(Mode == 1) Encryption();		//¶}©l¥[±K		
-//	else if(Mode == 2) Decode();	//¶}©l¸Ñ±K 
+	if(Mode == 1) Encryption();		//é–‹å§‹åŠ å¯†		
+//	else if(Mode == 2) Decode();	//é–‹å§‹è§£å¯† 
 	
 	//is going to again or not
     Continue();
@@ -840,7 +855,7 @@ void StartRun(void)
 
 
 //==============================
-//***Encrypt Start*** ¥D¨ç¦¡¶}©l
+//***Encrypt Start*** ä¸»å‡½å¼é–‹å§‹
 //==============================
 void Encryption(void)
 {
@@ -853,7 +868,7 @@ void Encryption(void)
 	else if(Mode == 2) Modern_Cryptography();
 	
 }
-//Classical Cryptography		¥j¨å±K½X¾Ç
+//Classical Cryptography		å¤å…¸å¯†ç¢¼å­¸
 void Classical_Cryptography(void)
 {
 	printf("\033[33m		* * *Is running Classical Cryptography program...* * *\033[m\n");
@@ -882,13 +897,13 @@ void Classical_Cryptography(void)
 	}
 	
 }
-//Caesar Cipher					³ÍÂÄ±K½X  
+//Caesar Cipher					å‡±è–©å¯†ç¢¼  
 void CaesarCipher(void)	
 {	
 	//CaesarCipher program...
 	printf("\033[33m		* * *Is running Caesar Cipher program...* * *\033[m\n");
 	
-	//Explain the principle ¸ÑÄÀ­ì²z 
+	//Explain the principle è§£é‡‹åŸç† 
 	printf("\033[36mThe operating principle of this cryptography is to add displacement to each character in the string to get the ciphertext.\033[m\n");
 	printf("\033[36mEX : (shift is +1) King's Landing --> Ljoh(t!Mboejoh\033[m\n");
 	
@@ -914,13 +929,13 @@ void CaesarCipher(void)
 	
 	}	
 }
-//Advanced Caesar Cipher		¶i¶¥ ³ÍÂÄ±K½X 
+//Advanced Caesar Cipher		é€²éš å‡±è–©å¯†ç¢¼ 
 void Advanced_CaesarCipher(void)
 {
 	//Advanced_CaesarCipher program...
 	printf("\033[33m		* * *Is running Advanced CaesarCipher program...* * *\033[m\n");
 	
-	//Explain the principle ¸ÑÄÀ­ì²z 
+	//Explain the principle è§£é‡‹åŸç† 
 	printf("\033[36mThe operating principle of this cryptography is to add displacement to each character in the string to get the ciphertext.\033[m\n");
 	printf("\033[36mEX : (shift is +1) King's Landing --> Ljoh(t!Mboejoh\033[m\n");
 	
@@ -930,10 +945,10 @@ void Advanced_CaesarCipher(void)
 	
 	printf("\033[33mYour Advanced Caesar Cipher encrypt string is --> \033[m");
 	
-	int count = 0;						//Range count ­pºâ MuRange[] ªº°Ï¶¡¡A¥H²Å¦X(EX : 1234 means first char moves 1, second moves 2...etc)
+	int count = 0;						//Range count è¨ˆç®— MuRange[] çš„å€é–“ï¼Œä»¥ç¬¦åˆ(EX : 1234 means first char moves 1, second moves 2...etc)
 	for(int i = 0; i < Len; ++i)
 	{
-		if(count < RangeLen)			//°²³] RangeLen = 4, count == 4 ®É·|Âk¹s¡Arange 0 ~ 3 , 4 --> 0 
+		if(count < RangeLen)			//å‡è¨­ RangeLen = 4, count == 4 æ™‚æœƒæ­¸é›¶ï¼Œrange 0 ~ 3 , 4 --> 0 
 		{	
 			InputStr[i] = (int)InputStr[i] + IMuRange[count];
 			printf("\033[36m%c\033[m", InputStr[i]);
@@ -949,13 +964,13 @@ void Advanced_CaesarCipher(void)
 	}
 	
 }
-//Mirror Cipher					Ãè¹³Â½Âà 
+//Mirror Cipher					é¡åƒç¿»è½‰ 
 void MirrorCipher(void)
 {
 	//MirrorCipher program...
 	printf("\033[33m		* * *Is running MirrorCipher program...* * *\033[m\n");
 	
-	//Explain the principle ¸ÑÄÀ­ì²z 
+	//Explain the principle è§£é‡‹åŸç† 
 	printf("\033[36mThe working principle of this cryptography is to reverse each word in the string to get the ciphertext.\033[m\n");
 	printf("\033[36mEX : King's Landing --> gnidnaL s'gniK\033[m\n");
 	
@@ -964,7 +979,7 @@ void MirrorCipher(void)
 	
 	printf("\033[33mYour Mirror Cipher encrypt string is --> \033[m");
 	
-//	int words;							//¤ÏÂà¦r¦ê¸Ìªº³æµü 
+//	int words;							//åè½‰å­—ä¸²è£¡çš„å–®è© 
 //	for(int i = 0; i < Len; ++i)
 //	{
 //		if(isalpha(InputStr[i]) != 0 && isalpha(InputStr[i + 1]) == 0)
@@ -996,19 +1011,19 @@ void MirrorCipher(void)
 //		printf(" ");
 //	}
 	
-	for(int i = Len - 1; i >= 0; --i)	//³æ¯Â­ËÂà¦r¦ê 
+	for(int i = Len - 1; i >= 0; --i)	//å–®ç´”å€’è½‰å­—ä¸² 
 	{
 		printf("\033[36m%c\033[m", InputStr[i]);
 	}
 	
 }
-//Polybius Checkerboard Cipher	ªi§Q¤ñ¶ø´µ´Ñ½L
+//Polybius Checkerboard Cipher	æ³¢åˆ©æ¯”å¥§æ–¯æ£‹ç›¤
 void PolybiusCipher(void)
 {
 	//PolybiusCipher program...
 	printf("\033[33m		* * *Is running Polybius Cipher program...* * *\033[m\n");
 	
-	//Explain the principle ¸ÑÄÀ­ì²z 
+	//Explain the principle è§£é‡‹åŸç† 
 	printf("\033[36mThe operating principle of this cryptography is to use multiple CaesarCipher in the string to get the ciphertext.\033[m\n");
 	printf("\033[36mEX : (shift is +1) King's Landing --> Ljoh(t!Mboejoh\033[m\n");
 	
@@ -1018,10 +1033,10 @@ void PolybiusCipher(void)
 	
 	printf("\033[33mYour Polybius Cipher encrypt string is --> \033[m");
 	
-	int count = 0;						//Range count ­pºâ Polybius[] ªº°Ï¶¡¡A¥H²Å¦X(EX : 1234 means first char moves 1, second moves 2...etc)
+	int count = 0;						//Range count è¨ˆç®— Polybius[] çš„å€é–“ï¼Œä»¥ç¬¦åˆ(EX : 1234 means first char moves 1, second moves 2...etc)
 	for(int i = 0; i < Len; ++i)
 	{
-		if(count < RangeLen)			//°²³] RangeLen = 4, count == 4 ®É·|Âk¹s¡Arange 0 ~ 3 , 4 --> 0 
+		if(count < RangeLen)			//å‡è¨­ RangeLen = 4, count == 4 æ™‚æœƒæ­¸é›¶ï¼Œrange 0 ~ 3 , 4 --> 0 
 		{
 			InputStr[i] = (int)InputStr[i] + IMuPoly[count];
 			printf("\033[36m%c\033[m", InputStr[i]);
@@ -1042,9 +1057,9 @@ void PolybiusCipher(void)
 
 
 //==============================
-//***Decrypt Start*** ¥D¨ç¦¡¶}©l
+//***Decrypt Start*** ä¸»å‡½å¼é–‹å§‹
 //==============================
-//Classical Cryptography		¥j¨å±K½X¾Ç
+//Classical Cryptography		å¤å…¸å¯†ç¢¼å­¸
 void Modern_Cryptography(void)	
 {
 	printf("\033[33m		* * *Is running Modern Cryptography program...* * *\033[m\n");
@@ -1090,13 +1105,13 @@ void Modern_Cryptography(void)
 			break;
 	}
 }
-//Morse Cipher					¼¯´µ±K½X
+//Morse Cipher					æ‘©æ–¯å¯†ç¢¼
 void MorseCipher(void)
 {
 	//BasicCaesarCipher program...
 	printf("\033[33m		* * *Is running Morse Cipher program...* * *\033[m\n");
 	
-	//Explain the principle ¸ÑÄÀ­ì²z 
+	//Explain the principle è§£é‡‹åŸç† 
 	printf("\033[36mThe operating principle of this cryptography is to convert each character in the string into Morse code and to get the ciphertext.\033[m\n");
 	printf("\033[36mEX : (shift is +1) King's Landing --> Ljoh(t!Mboejoh\033[m\n");
 	
@@ -1191,20 +1206,20 @@ void MorseCipher(void)
 		
 	}
 }
-//Diffie-Hellman key exchage	¨fµá»®º¸°Ò±KÆ_¥æ´« 
+//Diffie-Hellman key exchage	ç‹„è²èµ«çˆ¾æ›¼å¯†é‘°äº¤æ› 
 int DH(void)
 {
 	//DH program...
 	printf("\033[33m		* * *Is running Diffie-Hellman key exchage program...* * *\033[m\n");
 
-	//Explain the principle ¸ÑÄÀ­ì²z 
+	//Explain the principle è§£é‡‹åŸç† 
 	/*
-		1. ¿ï¥X¤@­Ó¸û¤jªº½è¼Æ p(Clcok)¡A±µµÛ¿ï¥X½è¼Æ p ªº­ì®Ú q(Base) (q ³Ì¦n¸û¤p¡A²Õ¦X¸û¦h)¡A¨Ã¤½¶}¨â¼Æ¡C 
-		2. ¥Ò¤è¿ï¥X¥ô¤@¼Æ A(¨p¤H±KÆ_)¡A¨Ã­pºâ APPN = pow(q, A)mod p ¨Ã¤½¶}¡C 
-		3. ¤A¤è¿ï¥X¥ô¤@¼Æ B(¨p¤H±KÆ_)¡A¨Ã­pºâ BPPN = pow(q, B)mod p ¨Ã¤½¶}¡C
-		4. ¥Ò¤AÂù¤è¶Ç°e¦U¦Û PPN µ¹¹ï¤è¡C
-		5. ¥Ò¤AÂù¤è¦U¦Û­pºâ K(¨p±K¤½Æ_)¡AKA = pow(BPPN, A)mod p, KB = pow(APPN, B)mod p¡A¥i±o KA = KB¡A§Y¨p±K¤½Æ_¡C
-		6. ¥Ñ­pºâ K(¨p±K¤½Æ_)¤§¤èªk¥iª¾ : KA = (q^B^A)mod p, KB = (q^A^B)mod p¡A©Ò¥H (q^B^A) = (q^A^B)¡C¦]¦¹¥i±o¥t¤@¤H¤§±KÆ_¡C 
+		1. é¸å‡ºä¸€å€‹è¼ƒå¤§çš„è³ªæ•¸ p(Clcok)ï¼Œæ¥è‘—é¸å‡ºè³ªæ•¸ p çš„åŸæ ¹ q(Base) (q æœ€å¥½è¼ƒå°ï¼Œçµ„åˆè¼ƒå¤š)ï¼Œä¸¦å…¬é–‹å…©æ•¸ã€‚ 
+		2. ç”²æ–¹é¸å‡ºä»»ä¸€æ•¸ A(ç§äººå¯†é‘°)ï¼Œä¸¦è¨ˆç®— APPN = pow(q, A)mod p ä¸¦å…¬é–‹ã€‚ 
+		3. ä¹™æ–¹é¸å‡ºä»»ä¸€æ•¸ B(ç§äººå¯†é‘°)ï¼Œä¸¦è¨ˆç®— BPPN = pow(q, B)mod p ä¸¦å…¬é–‹ã€‚
+		4. ç”²ä¹™é›™æ–¹å‚³é€å„è‡ª PPN çµ¦å°æ–¹ã€‚
+		5. ç”²ä¹™é›™æ–¹å„è‡ªè¨ˆç®— K(ç§å¯†å…¬é‘°)ï¼ŒKA = pow(BPPN, A)mod p, KB = pow(APPN, B)mod pï¼Œå¯å¾— KA = KBï¼Œå³ç§å¯†å…¬é‘°ã€‚
+		6. ç”±è¨ˆç®— K(ç§å¯†å…¬é‘°)ä¹‹æ–¹æ³•å¯çŸ¥ : KA = (q^B^A)mod p, KB = (q^A^B)mod pï¼Œæ‰€ä»¥ (q^B^A) = (q^A^B)ã€‚å› æ­¤å¯å¾—å¦ä¸€äººä¹‹å¯†é‘°ã€‚ 
 	*/
 	printf("\033[36mThe principle of this cryptography is to input two prime numbers,\nwhich are clock number (using the remainder method) and base number (must be the primitive roots of the clock numbers),\nand then go through a series of remainder methods and prime numbers to multiply... etc,\nand finally to get the Ciphertext.\033[m\n");
 	printf("\033[36mEX : clock is 23, base is 5 & A use 6, B use 15 --> common key is 2\033[m\n");
@@ -1213,8 +1228,8 @@ int DH(void)
 	
 	//1.
 	Shift(4);
-	int Clock = *INTptr[0];	//the variable of modulo arithmetic	¨D¾l 
-	int Base = *INTptr[1];	//the variable of cardinal number	°ò¼Æ
+	int Clock = *INTptr[0];	//the variable of modulo arithmetic	æ±‚é¤˜ 
+	int Base = *INTptr[1];	//the variable of cardinal number	åŸºæ•¸
 	
 	//2. 3.
 	InputString(1);
@@ -1241,13 +1256,13 @@ int DH(void)
 	return 1;
 	
 }
-//Advanced Encryption Standard 	¶i¶¥¥[±K¼Ğ·Ç 
+//Advanced Encryption Standard 	é€²éšåŠ å¯†æ¨™æº– 
 int Advanced_DH(void)
 {
 	//DH program...
 	printf("\033[33m		* * *Is running Advanced Diffie-Hellman key exchage program...* * *\033[m\n");
 	
-	//Explain the principle ¸ÑÄÀ­ì²z 
+	//Explain the principle è§£é‡‹åŸç† 
 	printf("\033[36mThe principle of this cryptography is to input two prime numbers,\nwhich are clock number (using the remainder method) and base number (must be the primitive roots of the clock numbers),\nand then go through a series of remainder methods and prime numbers to multiply... etc,\nand finally to get the Ciphertext.\033[m\n");
 	printf("\033[36mEX : clock is 23, base is 5 & A use 6, B use 15 --> common key is 2\033[m\n");
 	
@@ -1256,8 +1271,8 @@ int Advanced_DH(void)
 	
 	//1.
 	Shift(4);
-	int Clock = *INTptr[0];	//the variable of modulo arithmetic	¨D¾l 
-	int Base = *INTptr[1];	//the variable of cardinal number	°ò¼Æ
+	int Clock = *INTptr[0];	//the variable of modulo arithmetic	æ±‚é¤˜ 
+	int Base = *INTptr[1];	//the variable of cardinal number	åŸºæ•¸
 	
 	//2. 3.
 	int Own = *INTptr[0];
@@ -1305,7 +1320,7 @@ int Base64(void)
 	//Base64 program...
 	printf("\033[33m		* * *Is running Base64 program...* * *\033[m\n"); 
 	
-	//Explain the principle ¸ÑÄÀ­ì²z 
+	//Explain the principle è§£é‡‹åŸç† 
 	printf("\033[36mThe principle is to re-divide every 3 bytes of binary data into 4 groups\n(each three 8-bit groups, that is, a total of 24 bits, which can be represented by four 6-bit Base64 values),\nand then look up the code table as an index , Get the corresponding characters,\nand then get the encoded string.\033[m\n");
 	printf("\033[36mEX : NEW --> TkVX\033[m\n");
 	
@@ -1313,8 +1328,8 @@ int Base64(void)
 	InputString(0); 
 	InputString(5); 
 	
-	int baseN;							//baseN:¬O·s½s½Xªº¶¡¹jªø«×(6 * baseN) 
-	int baseMAX = 8 * Len;				//baseMAX:¬O­ì¥[±K¦r¦ê¤@­Ó¦r¤¸8bits«áªºªø«×(8 * len)
+	int baseN;							//baseN:æ˜¯æ–°ç·¨ç¢¼çš„é–“éš”é•·åº¦(6 * baseN) 
+	int baseMAX = 8 * Len;				//baseMAX:æ˜¯åŸåŠ å¯†å­—ä¸²ä¸€å€‹å­—å…ƒ8bitså¾Œçš„é•·åº¦(8 * len)
 	
 	if(Len * 8 % 6 != 0) baseN = Len * 8 / 6 + 1;		//judge is float or not
 	else baseN = Len * 8 / 6;
@@ -1421,28 +1436,28 @@ int RSA(void)
 	//RSA program...
 	printf("\033[33m		* * *Is running RSA program...* * *\033[m\n");
 	
-	//Explain the principle ¸ÑÄÀ­ì²z 
+	//Explain the principle è§£é‡‹åŸç† 
 	/*
-		²Å¸¹·N¸q : 
+		ç¬¦è™Ÿæ„ç¾© : 
 		
-		p, q : ¥ô·N¨â½è¼Æ  
-		N = p * q : ­pºâ¥X¥¿¾ã¼Æ  
-		EulerN : N ªº ¼Ú©Ô¨ç¼Æ()  
-		e , limit(1 < e < Euler(N), ¥B»P N ¤¬½è) : ¤½Æ_  
-		d : ±KÆ_(e ªº¼Ò¤Ï¤¸¯À) 
+		p, q : ä»»æ„å…©è³ªæ•¸  
+		N = p * q : è¨ˆç®—å‡ºæ­£æ•´æ•¸  
+		EulerN : N çš„ æ­æ‹‰å‡½æ•¸()  
+		e , limit(1 < e < Euler(N), ä¸”èˆ‡ N äº’è³ª) : å…¬é‘°  
+		d : å¯†é‘°(e çš„æ¨¡åå…ƒç´ ) 
 		 
-		{e, N} : ¤½Æ_²Õ  
-		{d, N} : ±KÆ_²Õ  
+		{e, N} : å…¬é‘°çµ„  
+		{d, N} : å¯†é‘°çµ„  
 		
-		¬yµ{ : 
+		æµç¨‹ : 
 		
-		1. ¨D p, q ¨â¥ô·N½è¼Æ 
-		2. ­pºâ N  
-		3. ­pºâ Euler(N)
-		4. ¨DÀH¾÷¼Æ e
-		5. ®Ú¾Ú e * d / EulerN = k...1
-		   ¥i±o d = (EulerN * k + 1) / e, ++k --> k = 1, 2, 3...
-		6. ±N­n¥[±Kªº¦r¦êÂà¦¨ASCII½X¡AµM«á pow(¦r¦ê¸Ìªº³æ¤@¦r¤¸, e) mod N 
+		1. æ±‚ p, q å…©ä»»æ„è³ªæ•¸ 
+		2. è¨ˆç®— N  
+		3. è¨ˆç®— Euler(N)
+		4. æ±‚éš¨æ©Ÿæ•¸ e
+		5. æ ¹æ“š e * d / EulerN = k...1
+		   å¯å¾— d = (EulerN * k + 1) / e, ++k --> k = 1, 2, 3...
+		6. å°‡è¦åŠ å¯†çš„å­—ä¸²è½‰æˆASCIIç¢¼ï¼Œç„¶å¾Œ pow(å­—ä¸²è£¡çš„å–®ä¸€å­—å…ƒ, e) mod N 
 		
 	*/
 	printf("\033[36m1. Find p, q two arbitrary prime numbers\n2. Calculate N\n3. Calculate Euler(N)\n4. Find the random number e\n5. According to e * d / EulerN = k...1\nWe can get d = (EulerN * k + 1) / e, ++k --> k = 1, 2, 3...\n6. Convert the string to be encrypted into ASCII code, and then pow(a single character in the encrypted string, e) mod N\033[m\n");
@@ -1480,12 +1495,12 @@ int RSA(void)
 	printf("\033[32mEuler function of N is \033[m");
 	printf("\033[36m%lu\033[m\n", EulerN);
 	  
-	int IMUrand[EulerN - 2];								//IMUrand[] == e ªº©Ò¦³¥i¯à 
-	for(int i = 2; i < EulerN; ++i)							//¤£±o­«½Æ¿ï¨ú¡C¥i¥Î°ÊºA°}¦C¡BCPU­pºâ¡B¤j¶q°O¾ĞÅé¾Ü¤@
-	{														//¨Ï¥Î ¬~µPºtºâªk ¨ú¤@©w½d³ò¶Ã¼Æ
+	int IMUrand[EulerN - 2];								//IMUrand[] == e çš„æ‰€æœ‰å¯èƒ½ 
+	for(int i = 2; i < EulerN; ++i)							//ä¸å¾—é‡è¤‡é¸å–ã€‚å¯ç”¨å‹•æ…‹é™£åˆ—ã€CPUè¨ˆç®—ã€å¤§é‡è¨˜æ†¶é«”æ“‡ä¸€
+	{														//ä½¿ç”¨ æ´—ç‰Œæ¼”ç®—æ³• å–ä¸€å®šç¯„åœäº‚æ•¸
 		IMUrand[i - 2] = i; 								
 	}
-	for(int i = 0; i < (int)pow(10, 6); ++i)				//¬~µP¡A¦Ê¸U¦¸ 
+	for(int i = 0; i < (int)pow(10, 6); ++i)				//æ´—ç‰Œï¼Œç™¾è¬æ¬¡ 
 	{
 		int TEMP01 = rand() % ((EulerN - 1) - 2 + 1) + 2; 
 		int TEMP02 = rand() % ((EulerN - 1) - 2 + 1) + 2;
@@ -1625,58 +1640,58 @@ int RSA(void)
 	return 1;
 	
 }
-//Data Encryption Standard		¸ê®Æ¥[±K¼Ğ·Ç 
+//Data Encryption Standard		è³‡æ–™åŠ å¯†æ¨™æº– 
 int DES(void)
 {
 	//Data Encryption Standard program...
 	printf("\033[33m		* * *Is running Data Encryption Standard program...* * *\033[m\n");
 	
 	/*
-	¤j·§¬yµ{ :
+	å¤§æ¦‚æµç¨‹ :
 	
-		1. ±N¿é¤Jªº¸ê®Æ°µ ªì©l¸m´« IP(initial permutation¡Aªì©l±Æ¦C)
+		1. å°‡è¼¸å…¥çš„è³‡æ–™åš åˆå§‹ç½®æ› IP(initial permutationï¼Œåˆå§‹æ’åˆ—)
 		
-		2. ±N¸ê®Æ¤Á³Î¦¨¥ª¥k¡C
+		2. å°‡è³‡æ–™åˆ‡å‰²æˆå·¦å³ã€‚
 		
-			(F¨ç¦¡¡A F-function(Feistel Cipher) ) x 16
-				3. ¥kÃä¸ê®Æ§@ F¨ç¦¡ «á¸ò¥ªÃä°µ XOR¡C
+			(Få‡½å¼ï¼Œ F-function(Feistel Cipher) ) x 16
+				3. å³é‚Šè³‡æ–™ä½œ Få‡½å¼ å¾Œè·Ÿå·¦é‚Šåš XORã€‚
 			
-				4. µM«á¥ª¥kÃä¹ï½Õ«á­«½Æ F¨ç¦¡ 16¦¸¡C
+				4. ç„¶å¾Œå·¦å³é‚Šå°èª¿å¾Œé‡è¤‡ Få‡½å¼ 16æ¬¡ã€‚
 		
-		5. ³Ì«á¦b°µ FP(°f IP)¡C
+		5. æœ€å¾Œåœ¨åš FP(é€† IP)ã€‚
 		
-		F¨ç¦¡¡AF-function(Feistel Cipher) :
+		Få‡½å¼ï¼ŒF-function(Feistel Cipher) :
 	
-			1. ÂX±i E (Expansion)
+			1. æ“´å¼µ E (Expansion)
 			
-			2. ¸ò¤l±KÆ_ ki °µ XOR
+			2. è·Ÿå­å¯†é‘° ki åš XOR
 			
-			3. ¶i¤J S-Box (Substitution-Box)¥N´« 
+			3. é€²å…¥ S-Box (Substitution-Box)ä»£æ› 
 			
-			4. ±Æ¦C P (Permutation)
+			4. æ’åˆ— P (Permutation)
 	
-	.C ¤j·§¬yµ{ :
+	.C å¤§æ¦‚æµç¨‹ :
 	
-		1.	¿é¤J : ©ú¤å(¸ê®Æ)
+		1.	è¼¸å…¥ : æ˜æ–‡(è³‡æ–™)
 	 
-		2.	¶i¦æ IP 
+		2.	é€²è¡Œ IP 
 		
-		3.	ª÷Æ_ K ªºÀò¨ú 
+		3.	é‡‘é‘° K çš„ç²å– 
 		
-		4.	±K½X¨ç¦¡ F-function(Feistel Cipher) 
+		4.	å¯†ç¢¼å‡½å¼ F-function(Feistel Cipher) 
 		
-		5.	§À¸m´« FP
+		5.	å°¾ç½®æ› FP
 	
 	*/ 
 	
-	//Explain the principle ¸ÑÄÀ­ì²z 
+	//Explain the principle è§£é‡‹åŸç† 
 	printf("\033[36m\n1. Input plaintext(8bits or 8 * n)\n2. Permutation plaintext by use IP table\n3. Input the main Key K(8bits or 8 * n)\n4. Enter data in F-function(Feistel Cipher)\n5. Permutation CipherText by use FP table\033[m\n");
 	printf("\033[36m\nEX : \n\tPlainText[64] is 0000000100100011010001010110011110001001101010111100110111101111\n\tKey[64] is 0001001100110100010101110111100110011011101111001101111111110001\033[m\n\n");
 	
 	//Encrypting string...
 	
-	static const int IP[64] = {58, 50, 42, 34, 26, 18, 10, 2,			//(IP) Initial permutation¡Aªì©l±Æ¦C 
-				60, 52, 44, 36, 28, 20, 12, 4,							//­«·s±Æ¦C©ú¤åªº¹Lµ{   
+	static const int IP[64] = {58, 50, 42, 34, 26, 18, 10, 2,			//(IP) Initial permutationï¼Œåˆå§‹æ’åˆ— 
+				60, 52, 44, 36, 28, 20, 12, 4,							//é‡æ–°æ’åˆ—æ˜æ–‡çš„éç¨‹   
 				62, 54, 46, 38, 30, 22, 14, 6,
 				64, 56, 48, 40, 32, 24, 16, 8,
 				57, 49, 41, 33, 25, 17, 9,  1,
@@ -1684,7 +1699,7 @@ int DES(void)
 				61, 53, 45, 37, 29, 21, 13, 5,
 				63, 55, 47, 39, 31, 23, 15, 7};
 	
-	static const int FP[64] = {40, 8, 48, 16, 56, 24, 64, 32,			//(FP) Inverse initial permutation ³Ì²×±Æ¦C±Æ¦C(ªì©l±Æ¦Cªº°f¹Bºâ) 
+	static const int FP[64] = {40, 8, 48, 16, 56, 24, 64, 32,			//(FP) Inverse initial permutation æœ€çµ‚æ’åˆ—æ’åˆ—(åˆå§‹æ’åˆ—çš„é€†é‹ç®—) 
 				39, 7,  47, 15, 55, 23, 63, 31,
 				38, 6,  46, 14, 54, 22, 62, 30,
 				37, 5,  45, 13, 53, 21, 61, 29,
@@ -1694,7 +1709,7 @@ int DES(void)
 				33, 1,  41, 9,  49, 17, 57, 25};
 	
 	static const int PC1[56] = {57, 49, 41, 33, 25, 17, 9,				//(PC_1) Permuted choice 1 
-				1,  58, 50, 42, 34, 26, 18,								//±N F¨ç¼Æ ¥Í¦¨ªº¤l±KÆ_¥h°£ ©_°¸¸ûÅç(parity bit)  
+				1,  58, 50, 42, 34, 26, 18,								//å°‡ Få‡½æ•¸ ç”Ÿæˆçš„å­å¯†é‘°å»é™¤ å¥‡å¶è¼ƒé©—(parity bit)  
 				10, 2,  59, 51, 43, 35, 27,
 				19, 11, 3,  60, 52, 44, 36,
 				63, 55, 47, 39, 31, 23, 15,
@@ -1703,7 +1718,7 @@ int DES(void)
 				21, 13, 5  ,28, 20, 12, 4};
 	
 	static const int PC2[48] = {14, 17, 11, 24, 1, 5,					//(PC_2) Permuted choice 2
-				3,  28, 15, 6,  21, 10,									//±N F¨ç¼Æ ¥Í¦¨ªº¤l±KÆ_¥h°£ ©_°¸¸ûÅç(parity bit) 
+				3,  28, 15, 6,  21, 10,									//å°‡ Få‡½æ•¸ ç”Ÿæˆçš„å­å¯†é‘°å»é™¤ å¥‡å¶è¼ƒé©—(parity bit) 
 				23, 19, 12, 4,  26, 8,
 				16, 7,  27, 20, 13, 2,
 				41, 52, 31, 37, 47, 55,
@@ -1730,7 +1745,7 @@ int DES(void)
 				22, 11, 4,  25};
 	
 	static const int S[8][4][16] = {									//(S) S-Box
-				//R1													//¸g¹L XOR «á¸ê®Æ 48bits --> 6 * 8(bits) ==> ±N 6bits Âà¦¨ 4bits 
+				//R1													//ç¶“é XOR å¾Œè³‡æ–™ 48bits --> 6 * 8(bits) ==> å°‡ 6bits è½‰æˆ 4bits 
 				14, 4,  13, 1,  2,  15, 11, 8,  3,  10, 6,  12, 5,  9,  0,  7,		
 				0,  15, 7,  4,  14, 2,  13, 1,  10, 6,  12, 11, 9,  5,  3,  8,
 				4,  1,  14, 8,  13, 6,  2,  11, 15, 12, 9,  7,  3,  10, 5,  0,
@@ -1772,33 +1787,33 @@ int DES(void)
 				2,  1,  14, 7,  4,  10, 8,  13, 15, 12, 9,  0,  3,  5,  6,  11};	
 				
 	
-	//±Æ¦C¨ç¦¡ (P)¡APermutation(¿é¤Jªº«ü¼Ğ°}¦C¡A¸m´«ªí¡AÀx¦sµ²ªGªº«ü¼Ğ°}¦C¡A¸m´«ªø«×) 
-	//Function to : ¿é¤J¤@­Óªø«×¬°(Len)ªº«ü¼Ğ°}¦C(*Input)¡A¨Ã®Ú¾Ú¸m´«ªí(Table)¨Ó­«·s±Æ¦C¡A±Nµ²ªG¦s¤JÀx¦sµ²ªGªº«ü¼Ğ°}¦C(*Output) 
+	//æ’åˆ—å‡½å¼ (P)ï¼ŒPermutation(è¼¸å…¥çš„æŒ‡æ¨™é™£åˆ—ï¼Œç½®æ›è¡¨ï¼Œå„²å­˜çµæœçš„æŒ‡æ¨™é™£åˆ—ï¼Œç½®æ›é•·åº¦) 
+	//Function to : è¼¸å…¥ä¸€å€‹é•·åº¦ç‚º(Len)çš„æŒ‡æ¨™é™£åˆ—(*Input)ï¼Œä¸¦æ ¹æ“šç½®æ›è¡¨(Table)ä¾†é‡æ–°æ’åˆ—ï¼Œå°‡çµæœå­˜å…¥å„²å­˜çµæœçš„æŒ‡æ¨™é™£åˆ—(*Output) 
 	void Permutation(char* Input, const int* Table, char* Output, int Len)
 	{
 		for(int i = 0; i < Len; ++i)
 		{
-			Output[i] = Input[Table[i] - 1];				//´î¤@¬O¦]¬°°}¦C¥Ñ 0 ¶}©l±Æ¦C 
+			Output[i] = Input[Table[i] - 1];				//æ¸›ä¸€æ˜¯å› ç‚ºé™£åˆ—ç”± 0 é–‹å§‹æ’åˆ— 
 		}
 		
 		return ;
 	}
 
-	//¥ª²¾¨ç¦¡ (L)¡A Rotate_Left(¿é¤Jªº«ü¼Ğ°}¦C¡AÀx¦sµ²ªGªº«ü¼Ğ°}¦C¡A¸m´«ªø«×¡A°j°é¥ª²¾ªø«×)
-	//Function to : ¿é¤J¤@­Óªø«×¬°(Len)ªº«ü¼Ğ°}¦C(*Input)¡A¨Ã°j°é¥ª²¾ Shift ¦ì«á¡A±Nµ²ªG¦s¤J¶J¦sµ²ªGªº«ü¼Ğ°}¦C(*Output) 
+	//å·¦ç§»å‡½å¼ (L)ï¼Œ Rotate_Left(è¼¸å…¥çš„æŒ‡æ¨™é™£åˆ—ï¼Œå„²å­˜çµæœçš„æŒ‡æ¨™é™£åˆ—ï¼Œç½®æ›é•·åº¦ï¼Œè¿´åœˆå·¦ç§»é•·åº¦)
+	//Function to : è¼¸å…¥ä¸€å€‹é•·åº¦ç‚º(Len)çš„æŒ‡æ¨™é™£åˆ—(*Input)ï¼Œä¸¦è¿´åœˆå·¦ç§» Shift ä½å¾Œï¼Œå°‡çµæœå­˜å…¥è²¯å­˜çµæœçš„æŒ‡æ¨™é™£åˆ—(*Output) 
 	void Rotate_Left(char* Input, char* Output, int Len, int Shift)
 	{
 		for(int i = 0; i < Len; ++i)
 		{
-			Output[i] = Input[(i + Shift) % Len];			//¥Î¨ú¾l¼Æªº¤èªk¨Ó°j°é¥ª²¾ 
+			Output[i] = Input[(i + Shift) % Len];			//ç”¨å–é¤˜æ•¸çš„æ–¹æ³•ä¾†è¿´åœˆå·¦ç§» 
 		}
 		for(int i = 0; i < Len; ++i) Input[i] = Output[i];
 		
 		return ;
 	}
 	
-	//¤Q¶i¦ìÂà¤G¶i¦ì¨ç¦¡ (Dec --> Bin)
-	//Function to : ±N¤Q¶i¦ì¨îcÂà´«¦¨¤G¶i¦ì¨î¨Ã¦s¨ìrlt°}¦C¡A­ÉÅ²¤F¦ì¤¸²ÕÂà¦ì¤¸¨ç¦¡
+	//åé€²ä½è½‰äºŒé€²ä½å‡½å¼ (Dec --> Bin)
+	//Function to : å°‡åé€²ä½åˆ¶cè½‰æ›æˆäºŒé€²ä½åˆ¶ä¸¦å­˜åˆ°rlté™£åˆ—ï¼Œå€Ÿé‘‘äº†ä½å…ƒçµ„è½‰ä½å…ƒå‡½å¼
 	void DecToBin(char Decimal, char* Binary)
 	{
 		//bytes --> bits, 1 byte == 4 bits 
@@ -1810,14 +1825,14 @@ int DES(void)
 		}
 	}
 	
-	//¤lª÷Æ_(ki)Àò¨ú¨ç¦¡ (K)¡A SubKey_Generate(ª÷Æ_°}¦C 64bits¡A¤lª÷Æ_°}¦C)
-	//Function to : ¿é¤J ¥Dª÷Æ_(Key)¡A¦A¥Í¦¨¨ä¥L 16 ­Ó ¤lª÷Æ_(SubKey) 
+	//å­é‡‘é‘°(ki)ç²å–å‡½å¼ (K)ï¼Œ SubKey_Generate(é‡‘é‘°é™£åˆ— 64bitsï¼Œå­é‡‘é‘°é™£åˆ—)
+	//Function to : è¼¸å…¥ ä¸»é‡‘é‘°(Key)ï¼Œå†ç”Ÿæˆå…¶ä»– 16 å€‹ å­é‡‘é‘°(SubKey) 
 	void SubKey_Generate(char* Key, char SubKey[][48])
 	{
 		char KLeft_part[17][28], KRigit_part[17][28];
 		char KTempArray[56];
 		
-		Permutation(Key, PC1, KTempArray, 56); 				//±Nª÷Æ_¥Î PC_1 ¸m´«  
+		Permutation(Key, PC1, KTempArray, 56); 				//å°‡é‡‘é‘°ç”¨ PC_1 ç½®æ›  
 		
 		for(int i = 0; i < 56; ++i)
 		{
@@ -1826,7 +1841,7 @@ int DES(void)
 		}
 		for(int i = 1; i <= 16; ++i)						
 		{
-			if(i == 1 || i == 2 || i == 9 || i == 16)		//¦pªG¬°²Ä 1¡B2¡B9¡B16 ½ü¡A«h KLeft_part[]¡BKRigit_part[] °j°é¥ª²¾1¦ì¡A¨ä¥L½ü¦¸«h°j°é¥ª²¾2¦ì
+			if(i == 1 || i == 2 || i == 9 || i == 16)		//å¦‚æœç‚ºç¬¬ 1ã€2ã€9ã€16 è¼ªï¼Œå‰‡ KLeft_part[]ã€KRigit_part[] è¿´åœˆå·¦ç§»1ä½ï¼Œå…¶ä»–è¼ªæ¬¡å‰‡è¿´åœˆå·¦ç§»2ä½
 			{
 				Rotate_Left(KLeft_part[i - 1], KLeft_part[i], 28, 1);
 				Rotate_Left(KRigit_part[i - 1], KRigit_part[i], 28, 1);
@@ -1837,17 +1852,17 @@ int DES(void)
 				Rotate_Left(KRigit_part[i - 1], KRigit_part[i], 28,2);
 			}
 			
-			for(int j = 0; j < 56; ++j)						//±N Left_part[] & Rigit_part[] ¨â³¡¦X«÷¦¨ TempArray[] 
+			for(int j = 0; j < 56; ++j)						//å°‡ Left_part[] & Rigit_part[] å…©éƒ¨åˆæ‹¼æˆ TempArray[] 
 			{ 
 				if(j < 28) KTempArray[j] = KLeft_part[i][j];
 				else KTempArray[j] = KRigit_part[i][j - 28];
 			}
 			
-			Permutation(KTempArray, PC2, SubKey[i - 1], 48); //¥Î PC_2 ±o¨ì ¤lª÷Æ_(ki) 
+			Permutation(KTempArray, PC2, SubKey[i - 1], 48); //ç”¨ PC_2 å¾—åˆ° å­é‡‘é‘°(ki) 
 			
 		}
 		
-//		printf("16 Sub-Keys are¡G\n");
+//		printf("16 Sub-Keys areï¼š\n");
 //		for(int i = 0; i < 16; ++i)
 //		{
 //		    printf("SubKey-%d is : ", i);
@@ -1858,34 +1873,34 @@ int DES(void)
 		
 	}
 	
-	//¶O´µ§´±K½X (F)¡A Feistel_Cipher(©ú¤å 64bits¡Aª÷Æ_ 64bits¡A ±K¤å 64bits) 
-	//Function to : ¿é¤J ©ú¤å(PlainText)©M ¥Dª÷Æ_(Key)¡A¿é¥X ±K¤å(CipherText) 
+	//è²»æ–¯å¦¥å¯†ç¢¼ (F)ï¼Œ Feistel_Cipher(æ˜æ–‡ 64bitsï¼Œé‡‘é‘° 64bitsï¼Œ å¯†æ–‡ 64bits) 
+	//Function to : è¼¸å…¥ æ˜æ–‡(PlainText)å’Œ ä¸»é‡‘é‘°(Key)ï¼Œè¼¸å‡º å¯†æ–‡(CipherText) 
 	void Feistel_Cipher(char* Input, char* Key, char* Output)	
 	{
 		char Left_part[17][32], Right_part[17][32];
 		char TempArray[64], SubKey[16][48];
 		
 		//2. permutation IP
-		Permutation(Input, IP, TempArray, 64); 				//±N©ú¤å¶i¦æ IP¸m´« 
+		Permutation(Input, IP, TempArray, 64); 				//å°‡æ˜æ–‡é€²è¡Œ IPç½®æ› 
 		
 //		printf("Permutation IP : ");
 //		for(int i = 0; i < 64; i++) printf("%d", TempArray[i]);
 //		printf("\n\n");
 		
 		//3. get ki
-		SubKey_Generate(Key, SubKey); 						//Àò¨ú¤lª÷Æ_  
+		SubKey_Generate(Key, SubKey); 						//ç²å–å­é‡‘é‘°  
 		
-		for(int i = 0; i < 64; ++i)							//ªì©l¤Æ Left_part[]¡B Right_part[]
+		for(int i = 0; i < 64; ++i)							//åˆå§‹åŒ– Left_part[]ã€ Right_part[]
 		{
 			if(i < 32) Left_part[0][i] = TempArray[i];
 			else Right_part[0][i - 32] = TempArray[i];
 		}
 		
-		for(int i = 1; i <= 16; ++i)						//¶i¦æ 16 ½ü¹Bºâ 
-		{													//Àò±o Left_part[]
+		for(int i = 1; i <= 16; ++i)						//é€²è¡Œ 16 è¼ªé‹ç®— 
+		{													//ç²å¾— Left_part[]
 			for(int j = 0; j < 32; ++j) Left_part[i][j] = Right_part[i - 1][j];
 			
-			//¥Î¸m´«ªí E ¹ï TempArray[] ¶i¦æÂX¥R(Expansion)  
+			//ç”¨ç½®æ›è¡¨ E å° TempArray[] é€²è¡Œæ“´å……(Expansion)  
 			Permutation(Right_part[i - 1], E, TempArray, 48);
 			
 //			printf("Round %d, permutation E(Right_part[%d]) is : ", i, i - 1);
@@ -1896,26 +1911,26 @@ int DES(void)
 //		    printf("\n");
 		    
 			for(int j = 0; j < 48; ++j) Right_part[i - 1][j] = TempArray[j] ^ SubKey[i - 1][j];
-			int location = 0; 								//location ªí¥Ü¦b Right_part[] ¤¤ªº¦ì¸m
+			int location = 0; 								//location è¡¨ç¤ºåœ¨ Right_part[] ä¸­çš„ä½ç½®
 															//use S-box 48bits --> 32bits
 			for(int j = 0; j < 48; j += 6)
-			{ 												//¦ì¤¸­«²Õ¡A±N 48bits --> 8 * 6bits 
+			{ 												//ä½å…ƒé‡çµ„ï¼Œå°‡ 48bits --> 8 * 6bits 
 				char TEMP1, TEMP2, TEMP3, bits[6];
 				
 				for(int k = 0; k < 6; ++k) bits[k] = Right_part[i - 1][j + k];
 				
-				TEMP1 = bits[0] * 2 + bits[5]; 				//bits[0]¡Bbits[5] §@¦æ¸¹¡A¦s¦b TEMP1[] ¤¤ 
+				TEMP1 = bits[0] * 2 + bits[5]; 				//bits[0]ã€bits[5] ä½œè¡Œè™Ÿï¼Œå­˜åœ¨ TEMP1[] ä¸­ 
 
-				//bits[1]¡Bbits[2]¡Bbits[3]¡Bbits[4]§@¦C¸¹¦s¦b TEMP2 ¤¤ 
+				//bits[1]ã€bits[2]ã€bits[3]ã€bits[4]ä½œåˆ—è™Ÿå­˜åœ¨ TEMP2 ä¸­ 
 				TEMP2 = bits[1] * 8 + bits[2] * 4 + bits[3] * 2 + bits[4];		
 		
-				//®Ú¾Ú²Ä j / 6 ²Õªº²Ä TEMP1 ¦æ²Ä TEMP2 ¦C¬d S-box 
+				//æ ¹æ“šç¬¬ j / 6 çµ„çš„ç¬¬ TEMP1 è¡Œç¬¬ TEMP2 åˆ—æŸ¥ S-box 
 				TEMP3 = S[j / 6][TEMP1][TEMP2]; 			
  				
-				//±N Decimal --> 4¦ì Binary ¦s¨ì Right_part[] ¤¤ 
+				//å°‡ Decimal --> 4ä½ Binary å­˜åˆ° Right_part[] ä¸­ 
 				DecToBin(TEMP3, Right_part[i - 1] + location); 		
 				
-				location += 4; 								//¦]¬°¦s¤J¤F¥|¦ì¤G¶i¦ì¨î¼Æ¡Alocation «ü¦V Right_part[] ªº¦ì¸m +4
+				location += 4; 								//å› ç‚ºå­˜å…¥äº†å››ä½äºŒé€²ä½åˆ¶æ•¸ï¼Œlocation æŒ‡å‘ Right_part[] çš„ä½ç½® +4
 			
 			}
 			
@@ -1930,7 +1945,7 @@ int DES(void)
 //			for(int j = 0; j < 32; ++j) printf("%d", TempArray[j]);
 //			printf("\n");
 			
-			//¨â­Ó xor ±o¨ì Right_part[]
+			//å…©å€‹ xor å¾—åˆ° Right_part[]
 			for(int j = 0; j < 32; ++j) Right_part[i][j] = Left_part[i - 1][j] ^ TempArray[j];
 //			printf("Round %d, Left_part[%d] XOR TempArray[%d] is : ", i, i - 1, i); 
 //			for(int j = 0; j < 32; ++j) printf("%d", Right_part[i][j]);
@@ -1939,18 +1954,18 @@ int DES(void)
 		}
 		for(int i = 0; i < 64; ++i)
 		{ 	
-			//±N Left_part[] ©M Right_part[] ¨â­Ó¦X¦b¤@°_¦s¨ì TempArray[] ¤¤ 
+			//å°‡ Left_part[] å’Œ Right_part[] å…©å€‹åˆåœ¨ä¸€èµ·å­˜åˆ° TempArray[] ä¸­ 
 			if(i < 32) TempArray[i] = Right_part[16][i];
 			else TempArray[i] = Left_part[16][i - 32];
 		}
 		
-		Permutation(TempArray, FP, Output, 64); 			//permutation FP ±o¨ì³Ì²×ªº±K¤å 
+		Permutation(TempArray, FP, Output, 64); 			//permutation FP å¾—åˆ°æœ€çµ‚çš„å¯†æ–‡ 
 		
 		return ;
 	}
 	
-	//1. input : ©ú¤å¡Bª÷Æ_ 
-	char CipherText[48000]; 								//CipherText Àx¦s¥[±K«áªºµ²ªG 
+	//1. input : æ˜æ–‡ã€é‡‘é‘° 
+	char CipherText[48000]; 								//CipherText å„²å­˜åŠ å¯†å¾Œçš„çµæœ 
 	char PlainText[48000];
 	char Key[48000];
 	
@@ -1973,7 +1988,7 @@ int Triple_DES(void)
 	
 	return 0;
 }
-//Advanced Encryption Standard 	¶i¶¥¥[±K¼Ğ·Ç 
+//Advanced Encryption Standard 	é€²éšåŠ å¯†æ¨™æº– 
 int AES(void)
 {
 	//Advanced Encryption Standard program...
@@ -1982,9 +1997,9 @@ int AES(void)
 	/*
 		AES-128, AES-192, AES-256
 		ECB, CBC, CFB, OFB, CTR
-		//¥i¥H¦Ò¼{¤À¶}³æ¿W°µ AES ¥ş®M¥[±K
+		//å¯ä»¥è€ƒæ…®åˆ†é–‹å–®ç¨åš AES å…¨å¥—åŠ å¯†
 		 
-		 						­Ó§O®t²§©M³æ¦ì : 
+		 						å€‹åˆ¥å·®ç•°å’Œå–®ä½ : 
 								=================================================
 								=			=128 bits	=192 bits	=256 bits	=
 								=================================================
@@ -1992,45 +2007,45 @@ int AES(void)
 								=Group		=4 bytes	=4 bytes	=4 bytes	=
 								=Round		=10 times	=12	times	=14 times	=
 								=================================================
-		(§Ú¨º®É¤@ª½¬İ¤£À´¬°Ô£¬O­n¿é¤J 16chars¡A­ì¨Ó ±KÆ_ & ¤À²Õªø«×³æ¦ì¦¡ byte¡A¦Ó¥B 1 char = 1 bytes...(Àª§¼)) 
+		(æˆ‘é‚£æ™‚ä¸€ç›´çœ‹ä¸æ‡‚ç‚ºå•¥æ˜¯è¦è¼¸å…¥ 16charsï¼ŒåŸä¾† å¯†é‘° & åˆ†çµ„é•·åº¦å–®ä½å¼ byteï¼Œè€Œä¸” 1 char = 1 bytes...(å°·å°¬)) 
 		
-		.C ¤j·§¬yµ{ : 
-			¥»¦¸¨Ï¥Î AES-128, ECB¥[±K¼Ò¦¡ (³Ì°ò¥»ªº´Ú¦¡¡A¨S¦³ªì©l¦V¶qIV) 
+		.C å¤§æ¦‚æµç¨‹ : 
+			æœ¬æ¬¡ä½¿ç”¨ AES-128, ECBåŠ å¯†æ¨¡å¼ (æœ€åŸºæœ¬çš„æ¬¾å¼ï¼Œæ²’æœ‰åˆå§‹å‘é‡IV) 
 			
-			1. ¿é¤J©ú¤å, 16bits
+			1. è¼¸å…¥æ˜æ–‡, 16bits
 			
-			2. ¿é¤J¥Dª÷Æ_, 16bytes
+			2. è¼¸å…¥ä¸»é‡‘é‘°, 16bytes
 			
-			3. ¥[±K :  
-				¨C­Ó block ©w¸q¬°¥Nªí column (¤@¦C 4 ­Ó¤p°Ï¶ô¡A¨C°Ï¶ô 8bits)
+			3. åŠ å¯† :  
+				æ¯å€‹ block å®šç¾©ç‚ºä»£è¡¨ column (ä¸€åˆ— 4 å€‹å°å€å¡Šï¼Œæ¯å€å¡Š 8bits)
 				
 				1 block = 4 * 4 (bytes)
 				
-				1. ¦r¸`´À¥N¡]SubBytes¡^
-					§Q¥Î¤U­±ªºS-box¤¤ªº¨C¤@®æ¥N´«±¼¡AS-box¬O¸g¹L³]­pªº¡A¯à´£¨Ñ«D½u©ÊªºÅÜ´« 
+				1. å­—ç¯€æ›¿ä»£ï¼ˆSubBytesï¼‰
+					åˆ©ç”¨ä¸‹é¢çš„S-boxä¸­çš„æ¯ä¸€æ ¼ä»£æ›æ‰ï¼ŒS-boxæ˜¯ç¶“éè¨­è¨ˆçš„ï¼Œèƒ½æä¾›éç·šæ€§çš„è®Šæ› 
 				
-				2. ¦æ²¾¦ì¡]ShiftRows¡^
+				2. è¡Œç§»ä½ï¼ˆShiftRowsï¼‰
 				
-				3. ¦C²V²c¡]MixColumns¡^
+				3. åˆ—æ··æ·†ï¼ˆMixColumnsï¼‰
 				
-				4. ½ü±KÆ_¥[¡]AddRoundKey¡^
+				4. è¼ªå¯†é‘°åŠ ï¼ˆAddRoundKeyï¼‰
 			
-			4. ¿é¥X±K¤å Hex(16¶i¦ì) 
+			4. è¼¸å‡ºå¯†æ–‡ Hex(16é€²ä½) 
 	*/
 	
-	//Explain the principle ¸ÑÄÀ­ì²z 
+	//Explain the principle è§£é‡‹åŸç† 
 	printf("\033[36m    \033[m\n");
 	printf("\033[36mEX :     \033[m\n");
 	
 	//Encrypting string...
 	#define BLOCK 4
 	
-	short RunRound = 0;										//­pºâ ¥[±Kªº¦^©M¼Æ 
-	short NumOfKey = 0;										//­pºâ Æ_°Íªº¼Æ¶q 
+	short RunRound = 0;										//è¨ˆç®— åŠ å¯†çš„å›å’Œæ•¸ 
+	short NumOfKey = 0;										//è¨ˆç®— é‘°åŒ™çš„æ•¸é‡ 
 	
-	char Keys[32];											//Main Key (¤W­­ 32 bytes) 
-	char RoundKey[240];										//Àx¦s Main Key & SubKey 
-	char State[4][4]; 										//Àx¦s¥[±K¹Bºâ¹Lµ{¤¤ªºªºª¬ºA°}¦C 4 * 4 bytes 
+	char Keys[32];											//Main Key (ä¸Šé™ 32 bytes) 
+	char RoundKey[240];										//å„²å­˜ Main Key & SubKey 
+	char State[4][4]; 										//å„²å­˜åŠ å¯†é‹ç®—éç¨‹ä¸­çš„çš„ç‹€æ…‹é™£åˆ— 4 * 4 bytes 
 	
 	static const int S[256] =   							//(S) SubBytes 16*16
 	{
@@ -2053,32 +2068,32 @@ int AES(void)
 	    0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99, 0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16  //F
 	};
 	
-	static const int E[11] = 								//(E) Key-Expansion¡AAES-128 ³Ì¦h¨Ï¥Î¨ì 10¡A AES-192 ¨Ï¥Î³Ì¦h¨ì 8¡A AES-256 ¨Ï¥Î³Ì¦h¨ì 7¡C 
+	static const int E[11] = 								//(E) Key-Expansionï¼ŒAES-128 æœ€å¤šä½¿ç”¨åˆ° 10ï¼Œ AES-192 ä½¿ç”¨æœ€å¤šåˆ° 8ï¼Œ AES-256 ä½¿ç”¨æœ€å¤šåˆ° 7ã€‚ 
 	{
 	//   0     1     2     3      4    5     6     7     8    9     10
 	    0x87, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36
 	//
 	};
 	
-	//¥Í¦¨¦^¦Xª÷Æ_¨ç¦¡(K)¡A SubKey_Generate : generate SubKey & expansion SubKey
-	//Function to : ¥Í¦¨¦^¦Xª÷Æ_ 
+	//ç”Ÿæˆå›åˆé‡‘é‘°å‡½å¼(K)ï¼Œ SubKey_Generate : generate SubKey & expansion SubKey
+	//Function to : ç”Ÿæˆå›åˆé‡‘é‘° 
 	void SubKey_Generate(void)
 	{
 		
 		/*
-			³Ì«á¤@­Ó word¡A¤]´N¬O w3 (w(4n-1)) ·|¥ı¸g¹L f(g)¡C 
+			æœ€å¾Œä¸€å€‹ wordï¼Œä¹Ÿå°±æ˜¯ w3 (w(4n-1)) æœƒå…ˆç¶“é f(g)ã€‚ 
 			
-			f(g) ªº¤º®e¬O¡G
-			­n¥ı¦V¤W±ÛÂà¤@®æ¡A±µµÛ¨C¤@®æ³£¸g¹L Table S Âà´««á¡A³Ì¥ªÃäªº byte ­n©M¦^¦X«Y¼Æ (RC, == NumOfKey) °µ XOR
-			³Ì«á¸ò w0 (w(4n-4)) °µ XOR «á±o¨ìªºµ²ªG¦¨¬° w4¡C 
+			f(g) çš„å…§å®¹æ˜¯ï¼š
+			è¦å…ˆå‘ä¸Šæ—‹è½‰ä¸€æ ¼ï¼Œæ¥è‘—æ¯ä¸€æ ¼éƒ½ç¶“é Table S è½‰æ›å¾Œï¼Œæœ€å·¦é‚Šçš„ byte è¦å’Œå›åˆä¿‚æ•¸ (RC, == NumOfKey) åš XOR
+			æœ€å¾Œè·Ÿ w0 (w(4n-4)) åš XOR å¾Œå¾—åˆ°çš„çµæœæˆç‚º w4ã€‚ 
 			
-			w5 ¥u­n±N¤W¤@­Ó w(t - 1) ©M w(t - 3) °µ XOR §Y±o¨ì w(t)¡C
+			w5 åªè¦å°‡ä¸Šä¸€å€‹ w(t - 1) å’Œ w(t - 3) åš XOR å³å¾—åˆ° w(t)ã€‚
 			
 			================================================
 			
-			²Ä¤@½ü SubKey = Main-Key¡A¹º¤À¬° NumOfKey ¶ô (¨C­Ó 32 bits)[w0, w1, w2, w3]
+			ç¬¬ä¸€è¼ª SubKey = Main-Keyï¼ŒåŠƒåˆ†ç‚º NumOfKey å¡Š (æ¯å€‹ 32 bits)[w0, w1, w2, w3]
 			
-			¨C­Ó¶ô(block)¤À¬° 4­Ó¤l¶ô(sub-block)(8 bits) --> 1 Block == 4 Sub_Block == 8 * 4 bits ==> ¤@­Ó Sub_Block == 8 bits = 1 character(char)
+			æ¯å€‹å¡Š(block)åˆ†ç‚º 4å€‹å­å¡Š(sub-block)(8 bits) --> 1 Block == 4 Sub_Block == 8 * 4 bits ==> ä¸€å€‹ Sub_Block == 8 bits = 1 character(char)
 			
 			Ex: AES-128, Nb_k = 4, 4 block W0 ~ W3
 	    	Ex: AES-256, Nb_k = 8, 8 block W0 ~ W7
@@ -2103,21 +2118,21 @@ int AES(void)
 
 	     /*
 	     	Generate other Sub-Key
-			Ex: AES-128: i = 4 ~ 43, ¦@ 11 ­Ó 4 block(128 bits), »İ 44 ­Ó word (W0 ~ W43).
-	    	Ex: AES-256: i = 8 ~ 59, ¦@»İ­n 15 ­Ó 4 block(128 bits), »İ 60 ­Ó word (W0~ W59)
+			Ex: AES-128: i = 4 ~ 43, å…± 11 å€‹ 4 block(128 bits), éœ€ 44 å€‹ word (W0 ~ W43).
+	    	Ex: AES-256: i = 8 ~ 59, å…±éœ€è¦ 15 å€‹ 4 block(128 bits), éœ€ 60 å€‹ word (W0~ W59)
 		 */
 	    for(int i = NumOfKey; i < (NumOfKey * (RunRound + 1)); ++i)
 	    {													
 	        for(int j = 0; j < 4; ++j)
 			{ 	
-				//³B²z¨C­Ó block(W)
-	            TempByte[j] = RoundKey[(i - 1) * 4 + j]; 	//­n·s¼W¤@­Ó block(Word)¬G¨ú«e¤@­Óªº W ­È¦s¤J tempW 
+				//è™•ç†æ¯å€‹ block(W)
+	            TempByte[j] = RoundKey[(i - 1) * 4 + j]; 	//è¦æ–°å¢ä¸€å€‹ block(Word)æ•…å–å‰ä¸€å€‹çš„ W å€¼å­˜å…¥ tempW 
 	        }
 	        if (i % NumOfKey == 0)
 			{
 	            /**
 	             * Ex: AES-128 when generate W4, will use W3 do SubWord(RotWord(tempW)) XOR Rcon[4/4]
-	             *     AES-128 i ¬O 4 ªº­¿¼Æªº Wi ¥Î Wi-1²£¥Í Wi =  SubWord(RotWord(Wi-1)) XOR Rcon[i/4]
+	             *     AES-128 i æ˜¯ 4 çš„å€æ•¸çš„ Wi ç”¨ Wi-1ç”¢ç”Ÿ Wi =  SubWord(RotWord(Wi-1)) XOR Rcon[i/4]
 	             */
 	            //RotWord function, [a0, a1, a2, a3](4byte) left circular shift in a word [a1, a2, a3, a0]
 	            TEMP = TempByte[0];
@@ -2137,7 +2152,7 @@ int AES(void)
 //	            	TempByte[k] = S[(int)TempByte[k]];
 //				}
 	            
-	            //XOR [i/4], only leftmost byte are changed (¥u·|XOR³Ì¥ªªºbyte)
+	            //XOR [i/4], only leftmost byte are changed (åªæœƒXORæœ€å·¦çš„byte)
 	            TempByte[0] = TempByte[0] ^ E[i / NumOfKey]; 
 	            
 	        }
@@ -2172,12 +2187,12 @@ int AES(void)
 	    }
 	}
 	
-	//¥[¤J¦^¦Xª÷Æ_¨ç¦¡ (A)¡A Add Round-Key(Sub-Key), ª÷Æ_ XOR ¨ç¼Æ 
-	//Function to : ¥[¤J¦^¦Xª÷Æ_ 
+	//åŠ å…¥å›åˆé‡‘é‘°å‡½å¼ (A)ï¼Œ Add Round-Key(Sub-Key), é‡‘é‘° XOR å‡½æ•¸ 
+	//Function to : åŠ å…¥å›åˆé‡‘é‘° 
 	void AddRoundKey(int Round)
 	{
 	    /**
-	     * ®Ú¾Úround¨Ó¨Ï¥Îkey(¨C¦¸¥Î1­Óblock = 16byte)
+	     * æ ¹æ“šroundä¾†ä½¿ç”¨key(æ¯æ¬¡ç”¨1å€‹block = 16byte)
 	     * first key index = round * 16 bytes = round * Nb * 4;
 	     * Nb = 4
 	     */
@@ -2190,10 +2205,10 @@ int AES(void)
 		}
 	}
 	
-	//S²°±Æ¦C¨ç¦¡ (S)¡A SubBytes(void)
-	//Function to : ¨Ï¥Î table S ±Æ¦C State[]														
+	//Sç›’æ’åˆ—å‡½å¼ (S)ï¼Œ SubBytes(void)
+	//Function to : ä½¿ç”¨ table S æ’åˆ— State[]														
 	void SubBytes(){										//S-Box Substitution
-	    for (int i = 0; i < 4; ++i)							//let state[] : state[i][j] = state[i][(j + i) % 4] ¨ä¤¤ i¡Bj Äİ©ó [0, 3]
+	    for (int i = 0; i < 4; ++i)							//let state[] : state[i][j] = state[i][(j + i) % 4] å…¶ä¸­ iã€j å±¬æ–¼ [0, 3]
 	    {
 	    	for (int j = 0; j < 4; ++j)
 	        {
@@ -2202,8 +2217,8 @@ int AES(void)
 		}
 	}
 	
-	//¦C²¾¦ì¨ç¼Æ (L)¡A ShiftRows(row)
-	//Function to : ¥¿¦V¦C²¾¦ì --> ²Ä¤@¦æ«O«ù¤£ÅÜ¡A²Ä¤G¦æ´`Àô¥ª²¾ 8bits¡A²Ä¤T¦æ´`Àô¥ª²¾ 16bits¡A²Ä¥|¦æ´`Àô¥ª²¾ 24bits
+	//åˆ—ç§»ä½å‡½æ•¸ (L)ï¼Œ ShiftRows(row)
+	//Function to : æ­£å‘åˆ—ç§»ä½ --> ç¬¬ä¸€è¡Œä¿æŒä¸è®Šï¼Œç¬¬äºŒè¡Œå¾ªç’°å·¦ç§» 8bitsï¼Œç¬¬ä¸‰è¡Œå¾ªç’°å·¦ç§» 16bitsï¼Œç¬¬å››è¡Œå¾ªç’°å·¦ç§» 24bits
 	void ShiftRows(void)
 	{
 		char TempByte;
@@ -2238,17 +2253,17 @@ int AES(void)
 	 *  1b = x^8 + x^4 + x^3 + x^1 + 1 = 00011011(binary) over GF(2^8) 
 	 *  
 	 *  
-	 *  (x << 1) -- ¥Nªí input * {02}  = shift 1 bit
-	 *  (x >> 7) -- input / 2^7, ¥Nªí¥u¨ú²Ä8­Óbit
+	 *  (x << 1) -- ä»£è¡¨ input * {02}  = shift 1 bit
+	 *  (x >> 7) -- input / 2^7, ä»£è¡¨åªå–ç¬¬8å€‹bit
 	 *  ((x >> 7) & 1) * 0x1b ----
-	 *  ²Ä 8 ­Ó bit ­Y¬° 1 «h¥Nªí mod(2^7) «á·|³Ñ => 00011011, ³Ì«á¾ã­Óxtime(x)ÅÜ¦¨(x << 1) xor 00011011 (¸Ô±¡½Ğ¨£GF(2^n)§Ö³t mod¹Bºâªº¤è¦¡)
-	 *  ²Ä 8 ­Ó bit ­Y¬° 0 ·|ÅÜ¦¨0 * 0x1b,                    ³Ì«á¾ã­Óxtime(x) (x << 1) XOR 0 = (x << 1)
+	 *  ç¬¬ 8 å€‹ bit è‹¥ç‚º 1 å‰‡ä»£è¡¨ mod(2^7) å¾Œæœƒå‰© => 00011011, æœ€å¾Œæ•´å€‹xtime(x)è®Šæˆ(x << 1) xor 00011011 (è©³æƒ…è«‹è¦‹GF(2^n)å¿«é€Ÿ modé‹ç®—çš„æ–¹å¼)
+	 *  ç¬¬ 8 å€‹ bit è‹¥ç‚º 0 æœƒè®Šæˆ0 * 0x1b,                    æœ€å¾Œæ•´å€‹xtime(x) (x << 1) XOR 0 = (x << 1)
 	 */
-	//GF(2 ^ n) §Ö³t mod ¦¡ 
+	//GF(2 ^ n) å¿«é€Ÿ mod å¼ 
 	#define xtime(x) ((x << 1) ^ (((x >> 7) & 0x01) * 0x1b))
 	
-	//²V¦X¦æ¹Bºâ¨ç¼Æ (M)¡A Mix Columns
-	//Function to : °µ¤@½u©ÊÂà´«(linear transform)¡A°õ¦æ 4 ¦¸(4 Sub-Block) ¦æ²V¦X 
+	//æ··åˆè¡Œé‹ç®—å‡½æ•¸ (M)ï¼Œ Mix Columns
+	//Function to : åšä¸€ç·šæ€§è½‰æ›(linear transform)ï¼ŒåŸ·è¡Œ 4 æ¬¡(4 Sub-Block) è¡Œæ··åˆ 
 	void MixColumns(void)
 	{
 	    char TEMP, TEMP2, TEMP3;
@@ -2286,10 +2301,10 @@ int AES(void)
 	}
 	
 
-	//1. input ©ú¤å¡B¥Dª÷Æ_ 
-	char PlainText[16] = {0};								//©ú¤å¥²¶·¬O 16 bytes ªº¾ã¼Æ­¿ 						
-	char CipherText[16] = {0};								//±K¤å (Hex) 
-	char Key[32] = {0};										//¥Dª÷Æ_ Main-Key 
+	//1. input æ˜æ–‡ã€ä¸»é‡‘é‘° 
+	char PlainText[16] = {0};								//æ˜æ–‡å¿…é ˆæ˜¯ 16 bytes çš„æ•´æ•¸å€ 						
+	char CipherText[16] = {0};								//å¯†æ–‡ (Hex) 
+	char Key[32] = {0};										//ä¸»é‡‘é‘° Main-Key 
 	
 	printf("\033[32mWhat kind of AES encryption mode do you want to choose ? --> AES-128(1) || AES-192(2) || AES-256(3)\033[m\n");
 	
@@ -2398,13 +2413,13 @@ int AES(void)
 //            		}
 //        	}
     
-    NumOfKey = KeySize / 32;     							// Number of block of key, ­pºâ Key Block ¼Æ¶q (EX : AES-128 : 4) 
-    RunRound = NumOfKey + 6;         						// Number of round(RunRound), ­pºâ AES ¹Bºâ¦^¦X¦¸¼Æ (EX : AES-128 : 10)
+    NumOfKey = KeySize / 32;     							// Number of block of key, è¨ˆç®— Key Block æ•¸é‡ (EX : AES-128 : 4) 
+    RunRound = NumOfKey + 6;         						// Number of round(RunRound), è¨ˆç®— AES é‹ç®—å›åˆæ¬¡æ•¸ (EX : AES-128 : 10)
     
     InputString(7);
     for(int i = 0; i < 16; ++i) PlainText[i] = InputStr[i];
     
-    //Generate SubKey & Expansion Main-Key, ÂX¥RÆ_°Í¨ç¼Æ²£¥Í©Ò¦³Æ_°Í
+    //Generate SubKey & Expansion Main-Key, æ“´å……é‘°åŒ™å‡½æ•¸ç”¢ç”Ÿæ‰€æœ‰é‘°åŒ™
     SubKey_Generate(); 										// Expansion Keys - AES-128(44words/176 bytes), AES-192(52w/208 bytes), AES-256(60w/260bytes)
     
     int Round = 0;
@@ -2422,14 +2437,14 @@ int AES(void)
     {
     	for (int j = 0; j < 4; ++j)
         {
-        	State[j][i] = PlainText[i * 4 + j];				//Plaintext --> column§Î¦¡ [w0, w1, w2, w3]
+        	State[j][i] = PlainText[i * 4 + j];				//Plaintext --> columnå½¢å¼ [w0, w1, w2, w3]
 		}
 	}
     
-    //	Round 0 : Add Round Key, ²Ä 0 ¦^¦X : ¶È°õ¦æ Key XOR Block 
+    //	Round 0 : Add Round Key, ç¬¬ 0 å›åˆ : åƒ…åŸ·è¡Œ Key XOR Block 
     AddRoundKey(0);
 
-    // Round 1 ~ RunRound - 1, ¤ÏÂĞ°õ¦æ 1 ~ RunRound - 1 ¦^¦X
+    // Round 1 ~ RunRound - 1, åè¦†åŸ·è¡Œ 1 ~ RunRound - 1 å›åˆ
     for(Round = 1; Round < RunRound; ++Round)
 	{
         SubBytes();
@@ -2438,7 +2453,7 @@ int AES(void)
         AddRoundKey(Round);
     }
 
-    // Round RunRound, no MixColumns(), ²Ä RunRound ¦^¦X¨S¦³ ²V¦X¦æ¹Bºâ MixColumns()
+    // Round RunRound, no MixColumns(), ç¬¬ RunRound å›åˆæ²’æœ‰ æ··åˆè¡Œé‹ç®— MixColumns()
     SubBytes();
     ShiftRows();
     AddRoundKey(RunRound);
